@@ -4,7 +4,9 @@ App para organizar estudos de concurso: edital verticalizado, ciclo de estudos, 
 
 ## Como usar
 
-Abra o link do site (GitHub Pages) e comece a cadastrar suas matérias. Não precisa de conta nem de instalação.
+Abra o link do site (GitHub Pages). Não precisa de conta nem de instalação.
+
+Na primeira vez, o app já abre com o **edital modelo do TRT-MG 3ª Região (Analista Judiciário – Área Judiciária)**: 11 matérias, 134 aulas e um ciclo de estudos (Direito Civil → Administrativo → Constitucional → Processual Civil). Ajuste à vontade: apague, edite ou adicione matérias no Edital.
 
 **Seus dados ficam salvos no seu próprio navegador.** Ninguém mais vê o que você cadastra, nem o dono deste repositório.
 
