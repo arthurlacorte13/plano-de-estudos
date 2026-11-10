@@ -1600,7 +1600,8 @@ async function init(){
   S.mode='local';S.me='local';S.viewId='local';
   let raw=null;try{raw=localStorage.getItem(LS_KEY);}catch(e){S.lsErro=true;}
   if(raw){try{const obj=JSON.parse(raw);S.data=migrar(obj);S.ultimoBackup=obj.ultimoBackup||null;}catch(e){S.banner='Os dados salvos neste navegador estão danificados. Importe um backup nas Preferências.';}}
-  else{S.data=migrar(JSON.parse(JSON.stringify(MODELO)));S.novoModelo=true;}
+  const vazio=!S.data.materias.length&&!S.data.sessoes.length&&!S.data.agenda.length&&!S.data.provas.length;
+  if(!raw||vazio){const nome=(S.data.perfis[0]||{}).nome;S.data=migrar(JSON.parse(JSON.stringify(MODELO)));if(nome)S.data.perfis[0].nome=nome;S.novoModelo=true;}
   if(!S.data.perfis.length)S.data.perfis.push({id:'local',owner:'local',...DEFAULT_PERFIL,criadoEm:Date.now()});
   const nome=S.data.perfis[0].nome;if(nome)S.names.local=nome;
   lsSalvar();route();
